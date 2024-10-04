@@ -1,0 +1,35 @@
+{
+  "name": "service-treez",
+  "module": "app.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --hot app.ts",
+    "build": "bun build ./app.ts --outdir ./build",
+    "format": "bunx biome format --write .",
+    "lint": "bunx biome lint --write .",
+    "prisma:migrate": "bunx --env-file=.env.development prisma migrate dev --name init",
+    "migrate": "bunx --env-file=.env.development prisma migrate dev --name"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "prisma": "^5.20.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "@prisma/client": "^5.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "moment": "^2.30.1",
+    "nanoid": "^5.0.7",
+    "pino-http": "^10.3.0",
+    "pino-pretty": "^11.2.2",
+    "zod": "^3.23.8",
+    "zod-validation-error": "^3.4.0"
+  }
+}
